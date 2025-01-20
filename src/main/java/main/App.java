@@ -38,14 +38,15 @@ public class App
                         String brand = sc.nextLine();
                         System.out.print("Anna uusi auton malli: ");
                         String model = sc.nextLine();
-                        newCar = new Car(brand, model, 0);
+                        newCar.setBrand(brand);
+                        newCar.setModel(model);
                         break;
                     case 3:
                         System.out.print("Kuinka monta km/h haluat kiihdyttää? ");
                         String speedString = sc.nextLine();
                         int accelerated = Integer.parseInt(speedString);
                         if (accelerated < 0) {
-                            System.out.println("Nopeuden täytyy olla positiivinen luku");
+                            System.out.println("Nopeuden täytyy olla positiivinen luku.");
                             break;
                         }
                         newCar.accelerate(accelerated);
@@ -55,7 +56,7 @@ public class App
                         String speedString2 = sc.nextLine();
                         int decelerated = Integer.parseInt(speedString2);
                         if (decelerated < 0) {
-                            System.out.println("Nopeuden täytyy olla positiivinen luku");
+                            System.out.println("Nopeuden täytyy olla positiivinen luku.");
                             break;
                         }
                         newCar.decelerate(decelerated);
